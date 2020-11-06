@@ -2,7 +2,7 @@ const waitOn = require('wait-on')
 
 const couchdb231Url = 'http://admin:admin@localhost:5984'
 const couchdb311Url = 'http://admin:admin@localhost:15984'
-const nano231 = require('nano')({ url: couchdb231Url, log: function (line) { console.log(line) }})
+const nano231 = require('nano')(couchdb231Url)
 const nano311 = require('nano')(couchdb311Url)
 
 async function start231 () {
