@@ -1,0 +1,32 @@
+version: '3'
+services:
+
+    couchdb_231:
+        image: apache/couchdb:2.3.1
+        ports:
+            - "5984:5984"
+        environment:
+            - COUCHDB_USER=admin
+            - COUCHDB_PASSWORD=admin
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+            nofile:
+                soft: 65536
+                hard: 65536
+    couchdb_311:
+        image: apache/couchdb:3.1.1
+        ports:
+            - "15984:5984"
+        environment:
+            - COUCHDB_USER=admin
+            - COUCHDB_PASSWORD=admin
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+            nofile:
+                soft: 65536
+                hard: 65536
+

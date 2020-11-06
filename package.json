@@ -1,0 +1,19 @@
+{
+  "name": "nano_bug",
+  "version": "1.0.0",
+  "description": "Reproduces a nano 9.0.0 bug",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "prestart": "docker-compose down --rmi local && docker-compose up -d",
+    "start": "node index.js",
+    "poststart": "docker-compose down --rmi local"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "dependencies": {
+    "nano": "^8.2.3",
+    "wait-on": "^5.2.0"
+  }
+}
